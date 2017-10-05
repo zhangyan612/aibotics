@@ -1,35 +1,18 @@
+
+# google text to audio
 from gtts import gTTS
-# import os
-# from tempfile import TemporaryFile
-# from time import sleep
-# import pyglet
-# from subprocess import call
-# from pygame import mixer # Load the required library
-# #
-# mixer.init(frequency=22050, size=-16, channels=2, buffer=4096)
-# mixer.music.load('tmp/temp.wav')
-# mixer.music.play()
-#
-
-# import winsound
-#
-# winsound.PlaySound('D:\Work\projects\aibotics\components\input\speech_to_text\tmp/temp.wav', winsound.SND_FILENAME)
-
-
-# import os
-# import subprocess
-# # file = os.system("start tmp/temp.wav")
-# sts = subprocess.call("start tmp/temp.wav", shell=True)
-
-# import subprocess
-# def play(audio_file_path):
-#     subprocess.call(["ffplay", "-nodisp", "-autoexit", audio_file_path], shell=True)
-# play("tmp/temp.wav")
-
 import sys
 import subprocess
 print(sys.platform)
 
+def text_to_audio(text, language):
+    tts = gTTS(text=text, lang=language)
+    filename = 'tmp/temp.wav'
+    tts.save(filename)
+
+# text_to_audio("I am doing good how are you", "en")
+
+# audio to speaker
 def play_sound(file_path):
     if sys.platform == 'linux2':
         subprocess.call("start " + file_path)
@@ -37,9 +20,14 @@ def play_sound(file_path):
         # call("start tmp/temp.wav", shell=True)
         s = subprocess.Popen("start " + file_path, shell=True)
 
-play_sound("tmp/temp.wav")
+# play_sound("tmp/temp.wav")
 
+def text_to_speech(text):
+    text_to_audio(text, "en")
+    play_sound("tmp/temp.wav")
 
+if __name__ == "__main__":
+    text_to_speech('hi i am going to school tomorrow, are you going to pick me up?')
 
 # import threading
 # import time

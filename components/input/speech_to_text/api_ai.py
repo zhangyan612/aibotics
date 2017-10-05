@@ -9,7 +9,7 @@ except ImportError:
     )
     import apiai
 
-CLIENT_ACCESS_TOKEN = '4056d8f63dce40a18f26d9689c3a7e98 '
+CLIENT_ACCESS_TOKEN = '4056d8f63dce40a18f26d9689c3a7e98'
 
 
 def main():
