@@ -1,6 +1,6 @@
 # OpenCV Track Object Movement
 # computer vision
-
+# https://www.pyimagesearch.com/practical-python-opencv/?src=sidebar-face-detection
 # import the necessary packages
 from collections import deque
 import numpy as np
