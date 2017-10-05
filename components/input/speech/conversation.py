@@ -16,6 +16,16 @@ answer, action = api_conversation().get_answer(speech_text)
 speaker.speak(answer)
 
 # another thread to do the action
+# blue tooth 0A:EC:04:04:D7:38
+# sudo bluez-simple-agent hci0 0A:EC:04:04:D7:38
+# sudo bluez-test-device trusted 0A:EC:04:04:D7:38 yes
+# /etc/init.d/bluetooth start
+# /etc/init.d/bluetooth connect 0A:EC:04:04:D7:38
+# hcitool scan
+# sudo /etc/init.d/bluetoothctl
 
-
+# sudo connect 0A:EC:04:04:D7:38
+# sudo bluez-simple-agent hci0 0A:EC:04:04:D7:38
+# sudo bluez-test-device trusted 0A:EC:04:04:D7:38 yes
+# sudo rfcomm connect hci0 0A:EC:04:04:D7:38
 
