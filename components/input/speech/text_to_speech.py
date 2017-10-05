@@ -22,12 +22,12 @@ def play_sound(file_path):
 
 # play_sound("tmp/temp.wav")
 
-def text_to_speech(text):
+def speak(text):
     text_to_audio(text, "en")
     play_sound("tmp/temp.wav")
 
 if __name__ == "__main__":
-    text_to_speech('hi i am going to school tomorrow, are you going to pick me up?')
+    speak('Lovely, thanks.')
 
 # import threading
 # import time

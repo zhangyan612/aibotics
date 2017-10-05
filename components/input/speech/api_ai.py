@@ -60,7 +60,11 @@ class api_conversation():
 
         result = res_text['result']
 
-        action = result['action']
+        if 'action' in result.keys():
+            action = result['action']
+        else:
+            action = ''
+
         answer = result['fulfillment']['speech']
         print(answer)
         return answer, action
@@ -68,6 +72,12 @@ class api_conversation():
 
 
 if __name__ == '__main__':
-    api_conversation().get_answer('can you turn on the light in kitchen?')
+    api_conversation().get_answer('hello how are you doing')
+    # import components.input.speech.test_data as test
+    # if 'action' in test.data.keys():
+    #     print("action exist")
+    # else:
+    #     print("no action")
+
 
 

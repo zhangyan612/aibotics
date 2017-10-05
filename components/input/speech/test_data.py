@@ -36,3 +36,9 @@ smart_home = {'lang': 'en',
                          'parameters': {'all': '', 'device': '', 'color': '', 'room': 'kitchen'}},
               'sessionId': '6ff6730a24e841aa836cafd56f3b1ac5',
               'timestamp': '2017-10-05T16:16:48.637Z'}
+
+
+data ={'status': {'code': 200, 'errorType': 'success'}, 'id': 'bfef8bb5-748d-45a4-9829-2459fd3306d9', 'timestamp': '2017-10-05T19:16:44.113Z', 'lang': 'en',
+       'result': {'resolvedQuery': 'hello how are you doing',
+                  'fulfillment': {'speech': ''}, 'source': 'agent', 'contexts': [], 'metadata': {}, 'score': 0.0},
+       'sessionId': 'd6c71cb6ec1947e28048c1688f075f7b'}
