@@ -3,16 +3,13 @@
 
 import speech_recognition as sr
 
-
-
-
 def recognize():
     # Record Audio
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("speech recognition start")
         audio = r.listen(source)
-        print(type(audio))
+        # print(type(audio))
 
     # Speech recognition using Google Speech Recognition
     try:
