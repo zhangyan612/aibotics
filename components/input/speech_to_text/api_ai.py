@@ -18,8 +18,9 @@ def main():
     request = ai.event_request(apiai.events.Event("my_custom_event"))
 
     request.lang = 'en'  # optional, default value equal 'en'
+    request.query = 'hi how are you'
 
-    request.session_id = "<SESSION ID, UNIQUE FOR EACH USER>"
+    # request.session_id = "<SESSION ID, UNIQUE FOR EACH USER>"
 
     response = request.getresponse()
 
