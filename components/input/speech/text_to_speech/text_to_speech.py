@@ -3,6 +3,10 @@ from gtts import gTTS
 import sys
 import subprocess
 import os
+import tempfile
+import pipes
+
+
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 print(sys.platform)
@@ -30,9 +34,38 @@ def speak(text=''):
         text_to_audio(text, "en")
         play_sound(filename)
 
+def play(filename):
+    # fix: Use platform-independent audio-output here
+    # See issue jasperproject/jasper-client#188
+    cmd = ['aplay', '-D', 'plughw:1,0', str(filename)]
+    print('Executing %s', ' '.join([pipes.quote(arg) for arg in cmd]))
+    with tempfile.TemporaryFile() as f:
+        subprocess.call(cmd, stdout=f, stderr=f)
+        f.seek(0)
+        output = f.read()
+        if output:
+            print("Output was: '%s'", output)
+
+
 if __name__ == "__main__":
     speak('Lovely, thanks.')
+    # play(dir_path + "/tmp/temp.wav")
 
+
+# def play_mp3(self, filename):
+#     mf = mad.MadFile(filename)
+#     with tempfile.NamedTemporaryFile(suffix='.wav') as f:
+#         wav = wave.open(f, mode='wb')
+#         wav.setframerate(mf.samplerate())
+#         wav.setnchannels(1 if mf.mode() == mad.MODE_SINGLE_CHANNEL else 2)
+#         # 4L is the sample width of 32 bit audio
+#         wav.setsampwidth(4L)
+#         frame = mf.read()
+#         while frame is not None:
+#             wav.writeframes(frame)
+#             frame = mf.read()
+#         wav.close()
+#         play(f.name)
 
 
 # import threading

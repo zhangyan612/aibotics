@@ -10,6 +10,11 @@ except ImportError:
     )
     import apiai
 
+
+# replacement of service into local service
+# Rasa NLU
+# https://github.com/zhangyan612/rasa_nlu
+
 # def main():
 #     ai = apiai.ApiAI('4056d8f63dce40a18f26d9689c3a7e98')
 #

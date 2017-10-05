@@ -1,3 +1,6 @@
 PyAudio
 SpeechRecognition
 gTTS
+
+# news /whether module
+# feedparser
