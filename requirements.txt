@@ -4,3 +4,6 @@ gTTS
 
 # news /whether module
 # feedparser
+
+# wit api
+wit
