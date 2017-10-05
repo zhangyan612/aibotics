@@ -1,4 +1,3 @@
-import os.path
 import sys
 import os
 import json
@@ -11,23 +10,19 @@ except ImportError:
     )
     import apiai
 
-
-
-
-def main():
-    ai = apiai.ApiAI('4056d8f63dce40a18f26d9689c3a7e98')
-
-    request = ai.event_request(apiai.events.Event("my_custom_event"))
-
-    request.lang = 'en'  # optional, default value equal 'en'
-    request.query = 'hi how are you'
-
-    # request.session_id = "<SESSION ID, UNIQUE FOR EACH USER>"
-
-    response = request.getresponse()
-
-    print (response.read())
-
+# def main():
+#     ai = apiai.ApiAI('4056d8f63dce40a18f26d9689c3a7e98')
+#
+#     request = ai.event_request(apiai.events.Event("my_custom_event"))
+#
+#     request.lang = 'en'  # optional, default value equal 'en'
+#     request.query = 'hi how are you'
+#
+#     # request.session_id = "<SESSION ID, UNIQUE FOR EACH USER>"
+#
+#     response = request.getresponse()
+#
+#     print (response.read())
 
 class api_conversation():
     def __init__(self):
@@ -69,10 +64,8 @@ class api_conversation():
         print(answer)
         return answer, action
 
-
-
 if __name__ == '__main__':
-    api_conversation().get_answer('hello how are you doing')
+    answer, action = api_conversation().get_answer('is everything good?')
     # import components.input.speech.test_data as test
     # if 'action' in test.data.keys():
     #     print("action exist")

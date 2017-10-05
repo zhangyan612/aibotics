@@ -1,13 +1,16 @@
-
 # google text to audio
 from gtts import gTTS
 import sys
 import subprocess
+import os
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
 print(sys.platform)
+# print(dir_path)
 
 def text_to_audio(text, language):
     tts = gTTS(text=text, lang=language)
-    filename = 'tmp/temp.wav'
+    filename = dir_path + "/tmp/temp.wav"
     tts.save(filename)
 
 # text_to_audio("I am doing good how are you", "en")
@@ -21,13 +24,16 @@ def play_sound(file_path):
         s = subprocess.Popen("start " + file_path, shell=True)
 
 # play_sound("tmp/temp.wav")
-
-def speak(text):
-    text_to_audio(text, "en")
-    play_sound("tmp/temp.wav")
+def speak(text=''):
+    if text:
+        filename = dir_path + "/tmp/temp.wav"
+        text_to_audio(text, "en")
+        play_sound(filename)
 
 if __name__ == "__main__":
     speak('Lovely, thanks.')
+
+
 
 # import threading
 # import time

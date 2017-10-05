@@ -1,8 +1,8 @@
 # robot should be able to make conversation with human
 
-import components.input.speech.google_speech as speech_to_text
-from components.input.speech.api_ai import *
-import components.input.speech.text_to_speech as speaker
+import components.input.speech.speech_to_text.google_speech as speech_to_text
+import components.input.speech.text_to_speech.text_to_speech as speaker
+from components.input.speech.nlu.api_ai import *
 
 # loop of listener
 
