@@ -1,4 +1,5 @@
 import cv2
+print(cv2.__version__)
 
 
 # Download latest OpenCV release from sourceforge site and double-click to extract it.
