@@ -22,7 +22,7 @@ def text_to_audio(text, language):
 # audio to speaker
 def play_sound(file_path):
     if sys.platform == 'linux2':
-        subprocess.call("start " + file_path)
+        subprocess.call("aplay " + file_path)
     elif sys.platform == 'win32':
         # call("start tmp/temp.wav", shell=True)
         s = subprocess.Popen("start " + file_path, shell=True)

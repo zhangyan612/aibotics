@@ -7,13 +7,17 @@ from components.input.speech.nlu.api_ai import *
 # loop of listener
 
 # parse voice to translate to text
-speech_text = speech_to_text.recognize()
+speech_text = speech_to_text.recognize_bing()
 
 # send text to api to get an answer and action
 answer, action = api_conversation().get_answer(speech_text)
 
-# speak out the answer
+# speak out the response
 speaker.speak(answer)
+
+
+
+# listener for voice
 
 # another thread to do the action
 # blue tooth 0A:EC:04:04:D7:38
