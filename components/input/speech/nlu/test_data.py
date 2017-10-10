@@ -42,3 +42,42 @@ data ={'status': {'code': 200, 'errorType': 'success'}, 'id': 'bfef8bb5-748d-45a
        'result': {'resolvedQuery': 'hello how are you doing',
                   'fulfillment': {'speech': ''}, 'source': 'agent', 'contexts': [], 'metadata': {}, 'score': 0.0},
        'sessionId': 'd6c71cb6ec1947e28048c1688f075f7b'}
+
+
+search = data = {
+  "id": "357391d8-17df-4931-925b-bce21e858e77",
+  "timestamp": "2017-10-09T06:32:17.979Z",
+  "lang": "en",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "google what time to sleep",
+    "action": "bot.search",
+    "actionIncomplete": False,
+    "parameters": {
+      "searchterm": "what time to sleep"
+    },
+    "contexts": [],
+    "metadata": {
+      "intentId": "94a1948b-9715-4c13-89aa-7a3445b50b79",
+      "webhookUsed": "false",
+      "webhookForSlotFillingUsed": "false",
+      "intentName": "bot.search"
+    },
+    "fulfillment": {
+      "speech": "searching...",
+      "messages": [
+        {
+          "type": 0,
+          "id": "9ff1edf1-2438-4d0c-a817-13eb179ae24c",
+          "speech": "searching..."
+        }
+      ]
+    },
+    "score": 0.8999999761581421
+  },
+  "status": {
+    "code": 200,
+    "errorType": "success"
+  },
+  "sessionId": "b09faa77-94ca-44d6-bc99-0fbed70778f8"
+}
